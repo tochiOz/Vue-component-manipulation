@@ -1,22 +1,24 @@
 <template>
     <div class="container">
-        <h1>The User Component</h1>
-        <p>I'm an awesome User!</p>
-        <h1>Name: {{ name }}</h1>
-        <button @click="changeName">Change my name</button>
-        <hr>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <app-user-detail 
-                :name="name"
-                @nameWasReset="name = $event"
-                :age="age">//the $event is used to listen to event binded to the property title
-                </app-user-detail>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <app-user-edit 
-                :age="age"
-                @edittedAge="age = $event"></app-user-edit>
+        <div class="backdrop">
+            <h1>The User Component</h1>
+            <p>I'm an awesome User!</p>
+            <h1>Name: {{ name }}</h1>
+            <button @click="changeName">Change my name</button>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <app-user-detail 
+                    :name="name"
+                    @nameWasReset="name = $event"
+                    :age="age">//the $event is used to listen to event binded to the property title
+                    </app-user-detail>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <app-user-edit 
+                    :age="age"
+                    @edittedAge="age = $event"></app-user-edit>
+                </div>
             </div>
         </div>
     </div>
@@ -50,17 +52,26 @@
             eventBus.$on('edittedAge', (age) => {
                 this.age = age
             })
+
+            eventBus.$on('formalAge', (age) => {
+                this.age = age
+            })
         }
     }
 </script>
 
 <style scoped>
 
-    .container {
-        margin: 100px;
+    div.container {
+        margin: 0;
+        padding: 59px;
+        background-image: url(https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg)
+    }
+
+    .backdrop {
         padding: 30px;
-        background-color: rgb(14, 219, 151);
-        height: 65vh;
+        background-color: #ffe6e6 transparent;
+        height: 64vh;
         text-align: center;
     }
     .row {
@@ -70,7 +81,7 @@
     }
 
     button {
-        background-color: rgb(4, 77, 58);
+        background-color: rgb(43, 87, 75);
         color: white;
         width: 150px;
         height: 50px;
