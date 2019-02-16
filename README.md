@@ -1,5 +1,7 @@
 # component-manipulation
 
+### Dynamically this selectionComponent which can be called anything can be used to create a tabs feature on vue where components are accessed individually without using a navbar
+
 ## Project setup
 ```
 npm install
