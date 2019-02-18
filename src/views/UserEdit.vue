@@ -4,6 +4,7 @@
         <p>Edit me!</p>
         <h1>UserAge: {{ age }}</h1>
         <button @click="changedAge">Edit Age</button>
+        <button @click="resetAge">Reset Age</button>
     </div>
 </template>
 
@@ -23,8 +24,12 @@ export default {
     methods: {
         changedAge () {
             this.age = 456788
-            // this.$emit('edittedAge', this.age)
             eventBus.changeAge(this.age)
+        },
+
+        resetAge () {
+            this.age = 19880
+            eventBus.resetA(this.age)
         }
     }
 }
@@ -33,8 +38,10 @@ export default {
 
 <style scoped>
     div {
-        background-color: rgb(221, 127, 127);
-        border: 2px solid red;
+        background-color: rgb(250, 100, 0);
+        color: beige;
+        border: 1px solid #f8c6b7;
+        box-shadow: 2px 2px 2px rgb(230, 79, 79);
         padding: 10px;
         margin: 10px;
         height: 240px;
