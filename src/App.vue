@@ -10,7 +10,7 @@
         <ul>
           <li class="nav-list">
             <router-link class="nav-item" to="/">Home</router-link>
-            <router-link class="nav-item" to="/quotes">Quotes</router-link>
+            <router-link class="nav-item" to="/color">Colors</router-link>
           </li>
         </ul>
       </div>
@@ -60,7 +60,7 @@ a
   margin 0 
   padding 0 30px
   color #fefefe
-  background-color #f00
+  background-color  rgb(47, 47, 49);
 
   .nav-brand
     display flex
@@ -84,7 +84,7 @@ a
   margin 0 
   padding 0 30px
   color #fefefe
-  background-color #f00
+  background-color  rgb(47, 47, 49);
 
   .foot1
     display flex

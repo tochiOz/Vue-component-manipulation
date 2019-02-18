@@ -1,28 +1,27 @@
 <template >
     <div class="container">
-        <button @click="selectedComponent= 'appQuote'">appQuote</button>
-        <button @click="selectedComponent= 'appAuthor'">appAuthor</button>
-        <button @click="selectedComponent= 'appNew'">appNew</button>
+        <div class="flex">
+            <button class="indigo" @click="selectedComponent= 'appIndigo'">Indigo Component Selector</button>
+            <button class="coral" @click="selectedComponent= 'appCoral'">Coral Component Selector</button>
+            <button class="magenta" @click="selectedComponent= 'appMagenta'">Mangeta Component Selector</button>
+        </div>
         <div class="fullview">
             <!-- using the @click(selectedcomponent it triggers the component attached to the button
             this is hereby displayed by the component tag using the (is) key attribute) -->
             <!-- dynamically this selection which can be called anything can be used to create a tabs feature on vue where components are accessed individually without using a navbar -->
             <component :is="selectedComponent">
                 <h2>The appQuote Page</h2>
+                <em name="Subtitle">Subtitle</em>
             </component>
-            <!-- <app-quote>
-                <h1 slot="title">{{ quoteTittle }}</h1>
-                <p slot="content">{{ quoteDescription }}</p>
-            </app-quote> -->
         </div>
     </div>
 </template>
 
 <script>
 
-import Quote from '../components/quotes/quoteDisplay.vue'
-import Author from '../components/quotes/author.vue'
-import New from '../components/quotes/new.vue'
+import Indigo from '../components/colors/indigo.vue'
+import Coral from '../components/colors/coral.vue'
+import Magenta from '../components/colors/magenta.vue'
 
 export default {
     
@@ -30,14 +29,14 @@ export default {
         return{
             quoteTittle: 'The Quote',
             quoteDescription: 'This is a Quote App made with Vue',
-            selectedComponent: 'appQuote'
+            selectedComponent: 'appIndigo'
         }
     },
 
     components: {
-        appQuote: Quote,
-        appAuthor: Author,
-        appNew: New
+        appIndigo: Indigo,
+        appCoral: Coral,
+        appMagenta: Magenta
     }
 }
 </script>
@@ -51,14 +50,35 @@ export default {
     }
 
     .fullview {
-        height: 64.5vh;
+        height: 60vh;
         
     }
 
+    .flex {
+        display: flex;
+        justify-content: center;
+    }
+
     button {
-        width: 150px;
+        margin: 0 1px;
+        width: 300px;
         height: 40px;
         font-size: 18px;
+        border: none;
+        color: azure;
+    }
+
+    .indigo {
+        background-color: rgb(67, 50, 116) !important;
+
+    }
+
+    .coral {
+        background-color: #f01e4c;
+    }
+
+    .magenta {
+        background-color: #d31aab;
     }
 </style>
 

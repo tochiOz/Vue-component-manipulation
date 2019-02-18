@@ -38,7 +38,8 @@ export default {
 
 <style scoped>
     div {
-        background-color: rgb(216, 214, 243);
+        background-color: rgb(250, 100, 0);
+        color: beige;
         border: 1px solid #f8c6b7;
         box-shadow: 2px 2px 2px rgb(230, 79, 79);
         padding: 10px;

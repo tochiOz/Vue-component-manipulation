@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import User from './views/User.vue'
-import Quote from './views/quotes.vue'
+import Color from './views/color.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -14,9 +14,9 @@ export default new Router({
       component: User
     },
     {
-      path: '/quotes',
-      name: 'Quote',
-      component: Quote
+      path: '/color',
+      name: 'Color',
+      component: Color
     }
   ]
 })
