@@ -8,16 +8,17 @@
             <hr>
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <app-user-detail 
-                    :name="name"
-                    @nameWasReset="name = $event"
-                    :age="age">//the $event is used to listen to event binded to the property title
+                    <app-user-detail
+                            :age="age"
+                            :name="name"
+                            @nameWasReset="name = $event"><!--//the $event is used to listen to event binded to the property title-->
                     </app-user-detail>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <app-user-edit 
-                    :age="age"
-                    @edittedAge="age = $event"></app-user-edit>
+                    <app-user-edit
+                            :age="age"
+                            @edittedAge="age = $event">
+                    </app-user-edit>
                 </div>
             </div>
         </div>
@@ -48,10 +49,10 @@
             }
         },
 
-        created() {
+        created: function () {
             eventBus.$on('edittedAge', (age) => {
                 this.age = age
-            })
+            }),
 
             eventBus.$on('formalAge', (age) => {
                 this.age = age
