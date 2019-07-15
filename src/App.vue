@@ -7,12 +7,10 @@
                 <h2><router-link to="/">Vue-Components</router-link></h2>
             </div>
             <div>
-                <ul>
-                    <li class="nav-list">
-                        <router-link class="nav-item" to="/">Home</router-link>
-                        <router-link class="nav-item" to="/color">Colors</router-link>
-                        <router-link class="nav-item" to="/quotes">Quotes</router-link>
-                    </li>
+                <ul class="nav-list">
+                    <router-link class="nav-item" to="/" active-class="active" exact>Home</router-link>
+                    <router-link class="nav-item" to="/color" active-class="active">Colors</router-link>
+                    <router-link class="nav-item" to="/quotes" active-class="active">Quotes</router-link>
                 </ul>
             </div>
         </header>
@@ -73,6 +71,8 @@
             display flex
             align-items center
             justify-content flex-end
+            text-decoration none
+            cursor pointer
 
         .nav-item
             padding 0 20px

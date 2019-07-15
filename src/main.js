@@ -5,7 +5,11 @@ import router from './router'
 import store from './store'
 import Detail from './views/UserDetail.vue'
 import Edit from './views/UserEdit.vue'
+import BootstrapVue from 'bootstrap-vue'
 
+Vue.use(BootstrapVue)
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.component('app-user-detail', Detail)
 Vue.component('app-user-edit', Edit)
 Vue.config.productionTip = false
